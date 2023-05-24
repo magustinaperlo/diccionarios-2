@@ -51,7 +51,7 @@ while True:
     print("4. Mostrar todos los contactos")
     print("5. Salir")
 
-    opcion = input("Ingrese el número de la opción deseada: ")
+    opcion = input("Ingrese una opción: ")
 
     if opcion == "1":
         agregar_contacto()
@@ -62,7 +62,7 @@ while True:
     elif opcion == "4":
         mostrar_contactos()
     elif opcion == "5":
-        print("¡Hasta luego!")
+        print("¡Hasta la vista baby!")
         break
     else:
         print("Opción inválida. Por favor, ingrese un número válido del menú.")

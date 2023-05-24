@@ -11,20 +11,22 @@
 
 numeroUsuario =[]
 def agregar_numeros():
-    c=0
-    while c!=10:    
-        num = input("Ingrese 10 números que luego utilizaremos para realizar los calculos: ")
+    c=input("Ingrese la cantidad de números que va a cargar para realizar los cálculos: ")
+    c=int(c)
+    contador=1
+    while contador<=c:    
+        num = input(f"Ingrese el {contador}: numero... ")
         num=(int(num))
         numeroUsuario.append(num)
-        c=c+1
-    print(numeroUsuario)
+        contador+=1
+    print(f"Los números ingresados son {numeroUsuario}")
 
 
 def calcular_suma():
     suma=0
     for num in numeroUsuario:
         suma=int(suma+num)
-    print(f"La suma de los numeros ingresados es {suma}")
+    print(f"La suma de los números ingresados es {suma}")
 
 
 
@@ -37,8 +39,8 @@ def encontrar_numeroMinMax():
             numMax=num
         if numMin == 0 or num < numMin:
             numMin=num
-    print(f"El numero minimo es:  {numMin}")
-    print(f"El numero maximo es:  {numMax}")
+    print(f"El numero mínimo es:  {numMin}")
+    print(f"El numero máximo es:  {numMax}")
 
 def promedioNum():
     suma=0
@@ -48,18 +50,18 @@ def promedioNum():
         suma=int(suma+numero)
         c=c+1
         promedioNum=(suma/c)
-    print(f"El promedio de los numeros es: {promedioNum}")
+    print(f"El promedio de los números es: {promedioNum}")
 
 
 while True:
     print("\n--- Calculadora ---")
-    print("1. Agregar 10 numeros")
+    print("1. Agregar 10 números")
     print("2. Calcular la suma de los números")
-    print("3. Encontrar numero maximo y minimo")
-    print("4. Calcular el promedio de los numeros")
+    print("3. Encontrar numero máximo y mínimo")
+    print("4. Calcular el promedio de los números")
     print("5. Salir")
 
-    opcion = input("Ingrese el número de la opción deseada: ")
+    opcion = input("Ingrese una opción: ")
 
     if opcion == "1":
         agregar_numeros()
@@ -70,7 +72,7 @@ while True:
     elif opcion == "4":
         promedioNum()
     elif opcion == "5":
-        print("¡Hasta luego!")
+        print("¡Hasta la vista baby!")
         break
     else:
         print("Opción inválida. Por favor, ingrese un número válido del menú.")
