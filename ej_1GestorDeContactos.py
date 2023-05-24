@@ -42,7 +42,7 @@ def mostrar_contactos():
         for nombre, telefono in contactos_telefono.items():
             print(nombre + ":", telefono)
 
-# Menú principal
+
 while True:
     print("\n--- Agenda de Contactos ---")
     print("1. Agregar contacto")
