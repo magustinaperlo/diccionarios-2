@@ -9,32 +9,23 @@
 #El programa debe solicitar al usuario que ingrese la lista de números separados por espacios y
 #luego imprimir los resultados de los cálculos estadísticos.
 
-numeroUsuario =[]
-def agregar_numeros():
-    c=input("Ingrese la cantidad de números que va a cargar para realizar los cálculos: ")
-    c=int(c)
-    contador=1
-    while contador<=c:    
-        num = input(f"Ingrese el {contador}: numero... ")
-        num=(int(num))
-        numeroUsuario.append(num)
-        contador+=1
-    print(f"Los números ingresados son {numeroUsuario}")
 
+def agregar_numeros():
+    numeroUsuario = input("Ingrese la lista de números separados por espacios: ")
+    numeros = [int(num) for num in numeroUsuario.split()]
+    print(f"Los números ingresados son: {numeros}")
+    return numeros
 
 def calcular_suma():
     suma=0
-    for num in numeroUsuario:
-        suma=int(suma+num)
+    for num in numeros:
+        suma=int(suma+int(num))
     print(f"La suma de los números ingresados es {suma}")
-
-
-
 
 def encontrar_numeroMinMax():
     numMax=0
     numMin=0
-    for num in numeroUsuario:
+    for num in numeros:
         if num > numMax:
             numMax=num
         if numMin == 0 or num < numMin:
@@ -46,12 +37,14 @@ def promedioNum():
     suma=0
     c=0
     promedioNum=0
-    for numero in numeroUsuario:
+    for numero in numeros:
         suma=int(suma+numero)
         c=c+1
         promedioNum=(suma/c)
     print(f"El promedio de los números es: {promedioNum}")
 
+
+numeros =[]
 
 while True:
     print("\n--- Calculadora ---")
@@ -64,7 +57,7 @@ while True:
     opcion = input("Ingrese una opción: ")
 
     if opcion == "1":
-        agregar_numeros()
+        numeros=agregar_numeros()
     elif opcion == "2":
         calcular_suma()
     elif opcion == "3":

@@ -10,7 +10,7 @@
 #5. Salir
 #El programa debe ejecutarse hasta que el usuario elija la opción "Salir" del menú.
 
-contactos_telefono = {}
+
 
 def agregar_contacto():
     nombre = input("Ingrese el nombre de la persona que desea agregar: ")
@@ -42,7 +42,7 @@ def mostrar_contactos():
         for nombre, telefono in contactos_telefono.items():
             print(nombre + ":", telefono)
 
-
+contactos_telefono = {}
 while True:
     print("\n--- Agenda de Contactos ---")
     print("1. Agregar contacto")
