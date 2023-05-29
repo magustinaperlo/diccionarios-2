@@ -66,3 +66,15 @@ while True:
         break
     else:
         print("Opción inválida. Por favor, ingrese un número válido del menú.")
+        
+        
+ # sugerencia para controlar el ingreso del usuario en la opciones: 
+
+opcion = input("Ingrese una opción: ")
+
+while not opcion.isdigit() or int(opcion) < 1 or int(opcion) > 5:
+    print("Opción inválida. Por favor, ingrese un número válido del menú.")
+    opcion = input("Ingrese una opción: ")
+
+    #verificará si la opción ingresada no es un dígito o si está fuera del rango válido (1-5). 
+    #El bucle seguirá solicitando al usuario que ingrese una opción válida hasta que se cumplan las condiciones.
